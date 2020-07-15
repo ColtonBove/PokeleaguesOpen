@@ -1,0 +1,72 @@
+{% extends "base_home.html" %}
+
+{% block title %}Create{% endblock %}
+
+{% block tab %}
+    <p>Groups | Create</p>
+{% endblock %}
+
+{% block content %}
+	<div class="create">
+        <div class="nested_create">
+            <div class="form_div">
+        		<p class="title">Create A Group</p>
+        		<form class="form" action="" method="post" novalidate>
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.title.label }}<br>
+                        {{ form.title(class="field") }}
+                        {% for error in form.title.errors %}
+                        <br>
+                        <span class="error">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.group_type.label }}<br>
+                        {{ form.group_type(class="field") }}<br>
+                        {% for error in form.group_type.errors %}
+                        <span class="error">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.dex.label(class="label") }}<br>
+                        {{ form.dex(class="field") }}
+                        {% for error in form.dex.errors %}
+                        <br>
+                        <span class="error">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.method.label(class="label") }}<br>
+                        {{ form.method(class="field") }}
+                        {% for error in form.method.errors %}
+                        <span class="error">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>{{ form.submit(class="button") }}</p>
+                </form>
+            </div>
+            <div class="group_image">
+                <p class="title" id="right">Sample Groups</p>
+                <div class="group1">
+                    <img src="/static/Group_images/squad.jpg" id="pic" alt="Squirtle Squad">
+                    <div class="credentials">
+                        <p class="name_group">Squirtle Squad</p>
+                        <p class="subtext">Kanto | Draft League</p>
+                        <p class="subtext">Owner: PokemonFan228</p>
+                        <p class="subtext">Wifi Battles</p>
+                    </div>
+                </div>
+                <div class="group1">
+                    <img src="/static/Group_images/rocket.jpg" alt="Team Rocket">
+                    <div class="credentials">
+                        <p class="name_group">Team Rocket</p>
+                        <p class="subtext">Galar | Tournament</p>
+                        <p class="subtext">Owner: Meowth</p>
+                        <p class="subtext">Pokemon Showdown</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+{% endblock %}

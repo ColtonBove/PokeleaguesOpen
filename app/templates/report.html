@@ -1,0 +1,30 @@
+{% extends "base_home.html" %}
+
+{% block title %}User Report{% endblock %}
+
+{% block tab %}
+    <p>User Report</p>
+{% endblock %}
+
+{% block content %}
+	<div class="report">
+		<form class="form" action="" method="post" novalidate>
+            <p class="title">User Report Form</p>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.title(class="field") }}
+                {% for error in form.title.errors %}
+                <br>
+                <span class="error">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.report(class="textfield") }}<br>
+                {% for error in form.report.errors %}
+                <span class="error">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit(class="button") }}</p>
+        </form>
+	</div>
+{% endblock %}

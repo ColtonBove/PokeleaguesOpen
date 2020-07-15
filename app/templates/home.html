@@ -1,0 +1,88 @@
+
+{% extends "base_home.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block tab %}
+    <p>Home</p>
+{% endblock %}
+
+{% block content %}
+	<div class="home">
+		{% if posts|length > 0 %}
+				<div class="post_holder"><!--This div is for the scroll box, you need to specify wifth and height do it in emz-->
+					{% for post in posts %}
+						{% if loop.last %}
+							<div class="hbox" style="text-align: left; background-color: white; margin: 1em;">
+								<div class="image_holder"><img src="/static/Group_images/{{post.group.image}}"class="group_image" alt="Group Profile Image"></div>
+								<div class="body_holder">
+									<a class="post_origin" href="{{url_for('groupname', name= post.group.name)}}">{{post.group.name}}</a>
+									<p class="body"><span class="title" id="group_title" style="text-decoration: none;">{{post.title}}:</span>  {{post.body}}</p>
+									<a class="link" href="{{post.link}}">{{post.link}}</a>
+									<p class="timestamp" style="color: #c0c0c0;">{{post.timestamp}}</p>
+									<p class="show" onclick="show_comments('comment_holder')">Show comments... <i class="fa fa-sort-desc"></i><span style="color: #e27d60; font-weight: bold;">({{post.comments|length}})</span></p>
+									<div class="comment_holder" id="comment_holder">
+										{% for comment in post.comments %}
+											{% if loop.first %}
+												<div class="hbox" id="comment_section" style="background-color: #dcdcdc;">
+													<img src="/static/Profile_images/{{comment.user.image_link}}" class="comment_image" alt="Profile pic">
+													<p class="comment_user">{{comment.user.username}}</p>
+													<p style="font-size: 14px; padding-right: 5px; color: black;">{{comment.body}}</p>
+												</div>
+											{% else %}
+												<div class="hbox" id="comment_section" style="border-top: none; background-color: #dcdcdc;">
+													<img src="/static/Profile_images/{{comment.user.image_link}}" class="comment_image" alt="Profile pic">
+													<p class="comment_user">{{comment.user.username}}</p>
+													<p style="font-size: 14px; padding-right: 5px; color: black;">{{comment.body}}</p>
+												</div>
+											{% endif %}
+										{% endfor %}
+									</div>
+									<div style="margin-top: .5em; padding-bottom: 1em; display: flex;">
+										<input type="text" class="comment" id="comment" placeholder="Add a Comment">
+										<button class="button" onclick="add_comment('comment', '{{post.id}}')">Add</button>
+									</div>
+								</div>
+							</div>
+						{% else %}
+							<div class="hbox" style="border-bottom: 1px solid #c0c0c0; text-align: left; background-color: white; margin: 1em;">
+								<div style="display: flex; flex-direction: column;"><img src="/static/Group_images/{{post.group.image}}"class="group_image" alt="Group Profile Image"></div>
+								<div class="body_holder">
+									<a class="post_origin" href="{{url_for('groupname', name= post.group.name)}}">{{post.group.name}}</a>
+									<p class="body"><span class="title" id="group_title" style="text-decoration: none;">{{post.title}}:</span>  {{post.body}}</p>
+									<a class="link" href="{{post.link}}">{{post.link}}</a>
+									<p class="timestamp" style="color: #c0c0c0;">{{post.timestamp}}</p>
+									<p class="show" onclick="show_comments('comment_holder{{loop.index}}')">Show comments... <i class="fa fa-sort-desc"></i><span style="color: #e27d60; font-weight: bold;">({{post.comments|length}})</span></p>
+									<div class="comment_holder" id="comment_holder{{loop.index}}">
+										{% for comment in post.comments %}
+											{% if loop.first %}
+												<div class="hbox" id="comment_section" style="background-color: #dcdcdc;">
+													<img src="/static/Profile_images/{{comment.user.image_link}}" class="comment_image" alt="Profile pic">
+													<p class="comment_user">{{comment.user.username}}</p>
+													<p style="font-size: 14px; padding-right: 5px; color: black;">{{comment.body}}</p>
+												</div>
+											{% else %}
+												<div class="hbox" id="comment_section" style="border-top: none; background-color: #dcdcdc;">
+													<img src="/static/Profile_images/{{comment.user.image_link}}" class="comment_image" alt="Profile pic">
+													<p class="comment_user">{{comment.user.username}}</p>
+													<p style="font-size: 14px; padding-right: 5px; color: black;">{{comment.body}}</p>
+												</div>
+											{% endif %}
+										{% endfor %}
+									</div>
+									<div style="margin-top: .5em; padding-bottom: 1em; display: flex; margin-bottom: 5px;">
+										<input type="text" class="comment" id="comment{{loop.index}}" placeholder="Add a Comment">
+										<button class="button" onclick="add_comment('comment{{loop.index}}', '{{post.id}}')">Add</button>
+									</div>
+								</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+		{% endif %}
+		{% if posts|length == 0 %}
+			<p class="message">Yikes no posts! Create, join, or spectate a group to get the party started...</p>
+		{% endif %}
+	</div>
+	<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

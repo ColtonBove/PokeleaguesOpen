@@ -1,0 +1,43 @@
+{% extends "base_home.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block tab %}
+    <p>Profile</p>
+{% endblock %}
+
+{% block content %}
+	<div class="profile">
+		<div class="box">
+			<img class="profileimage" src="/static/Profile_images/{{ current_user.image_link }}" alt="Profile Image">
+			<p class="username">{{ current_user.username }}</p>
+			<button class="button" onclick="window.location.href='{{ url_for('avatar') }}'">Edit Avatar</button>
+			<!-- When groups are defined we'll have to list them with the appropriate links-->
+			<table>
+			  <caption id="tabletitle">Groups</caption>
+			  <tr id="tableheader">
+			    <td>Group Owner</td>
+			    <td>Group Name</td>
+			    <td>Affiliation</td>
+			  </tr>
+			  {% set count = [0] %}
+			  {% for group in current_user.groups %}
+			  	<tr>
+			  		<td> {{ group.leader }} </td>
+			  		<td> <a href="{{url_for('groupname', name=group.name)}}">{{ group.name }}</a> </td>
+			  		{% if links[count[0]].status == 0 %}
+			  			<td>Owner</td>
+			  		{% endif %}
+			  		{% if links[count[0]].status == 1 %}
+			  			<td>Member</td>
+			  		{% endif %}
+			  		{% if links[count[0]].status == 2 %}
+			  			<td>Spectator</td>
+			  		{% endif %}
+			  	</tr>
+			  	{% if count.append(count.pop() + 1) %}{% endif %}
+			  {% endfor %}
+			</table>
+		</div>
+	</div>
+{% endblock %}

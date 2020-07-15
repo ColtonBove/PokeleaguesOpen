@@ -1,0 +1,45 @@
+{% extends "base_home.html" %}
+
+{% block title %}Profile Avatar{% endblock %}
+
+{% block tab %}
+    <p>Profile | Avatar</p>
+{% endblock %}
+
+{% block content %}
+	<div class="avatar">
+		<div class="nested">
+			<div class="title">
+				<p>Select from the following avatars</p>
+			</div>
+			<div>
+				<img src="/static/Profile_images/bulbasaur.png" class="profileimg" onClick="change_profile('bulbasaur.png')" alt="Bulbasaur">
+			</div>
+			<div>
+				<img src="/static/Profile_images/squirtle.png" class="profileimg" onClick="change_profile('squirtle.png')" alt="Squirtle">
+			</div>
+			<div>
+				<img src="/static/Profile_images/charmander.png" class="profileimg" onClick="change_profile('charmander.png')" alt="Charmander">
+			</div>
+			<div>
+				<img src="/static/Profile_images/pikachu.png" class="profileimg" onClick="change_profile('pikachu.png')" alt="Pikachu">
+			</div>
+			<div>
+				<img src="/static/Profile_images/pokeball.png" class="profileimg" onClick="change_profile('pokeball.png')" alt="Pokeball">
+			</div>
+			<div>
+				<img src="/static/Profile_images/eevee.png" class="profileimg" onClick="change_profile('eevee.png')" alt="Eevee">
+			</div>
+			<div>
+				<img src="/static/Profile_images/chikorita.png" class="profileimg" onClick="change_profile('chikorita.png')" alt="Chikorita">
+			</div>
+			<div>
+				<img src="/static/Profile_images/totadile.png" class="profileimg" onClick="change_profile('totadile.png')" alt="Totadile">
+			</div>
+			<div>
+				<img src="/static/Profile_images/cyndaquil.png" class="profileimg" onClick="change_profile('cyndaquil.png')" alt="Cyndaquil">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base_home.html" %}
+
+{% block title %}Find{% endblock %}
+
+{% block tab %}
+    <p>Groups | Find</p>
+{% endblock %}
+
+{% block content %}
+	<div class="join">
+		{% if groups == False %}
+			<p>Sorry, it looks like there currently aren't any groups, check back again later or try creating one...</p>
+		{% endif %}
+		{% if groups %}
+			<table>
+				<tr class="headers">
+					<td>Image</td>
+					<td>Name</td>
+					<td>Method</td>
+					<td>Platform</td>
+					<td>Pokedex</td>
+					<td>Owner</td>
+				</tr>
+				{% for group in groups %}
+					<tr class="body">
+						<td><img src=/static/Group_images/{{group.image}} alt="group image"></td>
+						{% if group.private == True %}
+							<td><a href="{{url_for('groupname', name=group.name)}}">{{ group.name }}<i class="fa fa-lock"></i></a></td>
+						{% endif %}
+						{% if group.private == False %}
+							<td><a href="{{url_for('groupname', name=group.name)}}">{{ group.name }}</a></td>
+						{% endif %}
+						<td>{{group.kind}}</td>
+						<td>{{group.platform}}</td>
+						<td>{{group.dex}}</td>
+						<td>{{group.leader}}</td>
+					</tr>
+				{% endfor %}
+			</table>
+		{% endif %}
+	</div>
+{% endblock %}

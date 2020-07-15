@@ -1,0 +1,44 @@
+
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+
+{% block content %}
+    <img class="starters" src="/static/starters.jpg" alt="kanto starters">
+
+    <div class="signin" style="margin-top: 2em; margin-bottom: 2em;">
+        <form class="form" action="" method="post" novalidate>
+            <p style="font-weight: bold;">Register</p>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.username(class="field") }}
+                {% for error in form.username.errors %}
+                <br>
+                <span class="error">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.email(class="field") }}<br>
+                {% for error in form.email.errors %}
+                <span class="error">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password(class="field") }}
+                {% for error in form.password.errors %}
+                    <br>
+                    <span class="error">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.password2(class="field") }}<br>
+                {% for error in form.password2.errors %}
+                <span class="error">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit(class="button") }}</p>
+        </form>
+    </div>
+
+{% endblock %}

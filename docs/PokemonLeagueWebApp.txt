@@ -1,0 +1,14 @@
+Pokemon League Web App
+
+-Support for drafts
+-Need an account
+-Can make leagues or join leagues
+-Leagues can be public or private
+-You can start a draft
+	-Filter pokemon available(by gen, types, etc)
+-You can also make a league and set pokemon by hand
+	-Showdown imports for teams?
+	
+-Link to showdown match in group archive
+-Shows records of players
+-Numbers of KO's by each pokemon and player

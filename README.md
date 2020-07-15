@@ -1,0 +1,1 @@
+Online platform for pokemon draft leagues and tournaments. Made with Python Flask. Install python flask and make a virtual environment to run. (Not currently hosted, contact me at jcb164@pitt.edu if you'd like to get in touch)

@@ -1,0 +1,30 @@
+
+<head>
+	<link rel="icon" href="/static/favicon.ico">
+</head>
+
+<title>{% block title %}Home{% endblock %} | PokeLeagues</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container">
+	<div class="header">
+		<a class="links" href="{{ url_for('home') }}">
+		<p class="title">PokeLeagues</p>
+		</a>
+		<a class="links" href="https://github.com/ColtonBove/Pokeleagues.git">
+		<img class="media" src="/static/github.png" alt="github">
+		</a>
+		<a class="links" href="https://www.facebook.com/profile.php?id=100008506361966">
+		<img class="media" src="/static/facebook.png" alt="facebook">
+		</a>
+		<a class="links" href="https://www.instagram.com/colton8027/?hl=en">
+		<img class="media" src="/static/instagram.png" alt="instagram">
+		</a>
+		<p class="subtitle">"The online platform for pokemon draft leagues, tournaments, and more"</p>
+		<p class="subtitle">New? Get the vitual tour <a href="https://youtu.be/EhFcdGVB1b0" style="color: black">here</a> to learn more!</p>
+	</div>
+
+	<div class="content">
+		{% block content %}{% endblock %}
+	</div>
+</div>

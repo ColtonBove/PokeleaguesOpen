@@ -1,0 +1,45 @@
+{% extends "base_home.html" %}
+
+{% block title %}Group Avatar{% endblock %}
+
+{% block tab %}
+    <p>Group | Avatar</p>
+{% endblock %}
+
+{% block content %}
+	<div class="avatar">
+		<div class="nested">
+			<div class="title">
+				<p>Select from the following avatars</p>
+			</div>
+			<div>
+				<img src="/static/Group_images/ditto.gif" class="groupimg" onClick="change_group('ditto.gif', '{{name}}')" alt="Ditto">
+			</div>
+			<div>
+				<img src="/static/Group_images/karp.png" class="groupimg" onClick="change_group('karp.png', '{{name}}')" alt="Magikarp">
+			</div>
+			<div>
+				<img src="/static/Group_images/lax.png" class="groupimg" onClick="change_group('lax.png', '{{name}}')" alt="Snorlax">
+			</div>
+			<div>
+				<img src="/static/Group_images/psyduck.bmp" class="groupimg" onClick="change_group('psyduck.bmp', '{{name}}')" alt="Psyduck">
+			</div>
+			<div>
+				<img src="/static/Group_images/squad.jpg" class="groupimg" onClick="change_group('squad.jpg', '{{name}}')" alt="Squirtle Squad">
+			</div>
+			<div>
+				<img src="/static/Group_images/puff.png" class="groupimg" onClick="change_group('puff.png', '{{name}}')" alt="Jigglypuff">
+			</div>
+			<div>
+				<img src="/static/Group_images/rocket.jpg" class="groupimg" onClick="change_group('rocket.jpg', '{{name}}')" alt="Team Rocket">
+			</div>
+			<div>
+				<img src="/static/Group_images/sleep.jpg" class="groupimg" onClick="change_group('sleep.jpg', '{{name}}')" alt="Lights out">
+			</div>
+			<div>
+				<img src="/static/Group_images/surprised.jpg" class="groupimg" onClick="change_group('surprised.jpg', '{{name}}')" alt="Surprised">
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

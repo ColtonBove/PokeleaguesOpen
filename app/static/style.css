@@ -1,0 +1,1329 @@
+
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #ecedf1;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid #dddddd;
+	margin: 25px 0;
+	font-size: 0.9em;
+	min-width: 400px;
+}
+
+.error {
+	font-size: 0.7vw;
+	color: #b22222;
+}
+
+.container {
+	display: grid;
+	height: 100vh;
+	background-color: #f6f6f6f6;
+
+	grid-template-rows: auto 1fr;
+	grid-template-columns: auto 1fr;
+}
+
+.container_home {
+	display: grid;
+	height: 100vh;
+	background-color: #ecedf1;
+
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto 1fr;
+}
+
+.nested {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-row-gap: 2em;
+	grid-column-gap: 0;
+}
+
+.nested_group {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 5em;
+}
+
+.nested_groupname {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto;
+
+	grid-row-gap: 2em;
+}
+
+.nested_create {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 2em;
+}
+
+.nested_info {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 1em;
+	grid-row-gap: none;
+}
+
+.nested_join {
+	display: grid;
+
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: none;
+	grid-row-gap: none;
+}
+
+/*---------------Header stuff goes here---------------*/
+
+.header {
+	grid-column: 1 / -1;
+	grid-row: 1 / 2;
+	background-color: #7cc3b5;
+	text-align: center;
+	padding: 1em;
+	border-bottom: 2px solid black;
+}
+
+.container_home .header {
+	grid-column: 2 / -1;
+	grid-row: 1 / 2;
+	height: 11em;
+	text-align: center;
+	background-color: #7cc3b5;
+	padding: 1em;
+	border: 2px solid black;
+	margin: 1.5em;
+	margin-bottom: .5em;
+}
+
+.header .title {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 50px;
+	text-shadow: 1px 1px #dddddd;
+	color: black;
+}
+
+.header .subtitle {
+	font-family: "Courier New", Courier, monospace;
+	padding: 5px;
+}
+
+.header .media {
+	max-width: 40px;
+	min-width: 25px; 
+	height: auto;
+	padding: 1em;
+}
+
+.header .media:hover {
+	opacity: 0.7;
+	transform: scale(0.98);
+}
+
+.header .links {
+	text-decoration: none;
+}
+
+/*---------------Sidebar stuff goes here---------------*/
+
+.sidebar {
+	grid-row: 1 / -1;
+	grid-column: 1 / 2;
+	border-right: 2px solid black;
+	background-color: #7cc3b5;
+	min-width: 170px;
+}
+
+.sidebar .elements {
+	color: black;
+	font-size: 18px;
+	font-family: "Courier New", Courier, monospace;
+	padding-left: 3px;
+}
+
+.sidebar .elements li {
+	list-style-type: none;
+	padding-top: 3em;
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+.sidebar .elements a {
+	color: black;
+	text-decoration: none;
+}
+
+.sidebar .elements a:hover {
+	color: #c38d9e;
+}
+
+/*---------------Content stuff goes here---------------*/
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-row: 2 / -1;
+	grid-column: 1 / -1;
+}
+
+/*---------------This is for the sign in page--------------*/
+
+.content .starters {  
+	width: 40vw;
+	height: 20vw;
+	min-width: 450px;
+	min-height: 225px;
+	padding-right: 5em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+.content .field {
+	padding-top: .4em;
+	padding-bottom: .4em;
+	padding-left: .6em;
+	width: 260px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.form p {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	padding-bottom: 1em;
+}
+
+.content .error {
+	font-size: 0.7vw;
+	color: #b22222;
+}
+
+.content .button {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #7cc3b5;
+	color: black;
+	padding: 4px 65px;
+	border-radius: 5px;
+	width: 260px;
+}
+
+.content .button:hover{
+	opacity: 0.7;
+	transform: scale(0.98);
+}
+
+.content .remember {
+	padding-right: 5px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 18px;
+}
+
+.content .registertext {
+	border-top: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 13px;
+	max-width: 260px; 
+	margin-top: .5em;
+}
+
+/*---------------Main Content Goes Here--------------*/
+
+.toptab {
+	border: 2px solid black;
+	grid-row: 2 / 3;
+	grid-column: 2 / -1;
+	margin: 1.5em;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-gap: 0;
+}
+
+.toptab .tab {
+	background-color: #7cc3b5;
+	padding: 10px;
+	padding-left: 20px;
+	font-family: "Courier New", Courier, monospace;
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 1px 1px black;
+
+	grid-row: 1 / 2;
+}
+
+.toptab .main {
+	background-color: #f2f2f2;
+	border: 1px solid #dddddd;
+	box-shadow: 1px 1px 10px 1px #a9a9a9;
+
+	grid-row: 2 / 3;
+}
+
+.toptab .footer {
+	padding: 27px;
+	background-color: #7cc3b5;
+
+	grid-row: 3 / 4;
+}
+
+/*---------------Homepage Content--------------*/
+
+.main .home {
+	/* offset x, offset y, blur radius, spread radius, color*/
+	padding: 2em 5em 2em 5em;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home .post_holder {
+	width: 90%;
+	height: 40em;
+	overflow: auto;
+	border: 2px solid #41b3a3;
+	border-radius: 5px;
+	background-color: white;
+	padding-right: 5px;
+}
+
+.home .comment_holder {
+	display: none;
+	overflow: auto;
+	height: 14em;
+}
+
+.home .hbox {
+	display: flex;
+	align-content: center;
+	text-align: center;
+}
+
+#comment_section {
+	text-align: left;
+	margin-left: 1em;
+	align-items: center; 
+	border: 1px solid #e27d60;
+	border-radius: 5px;
+	color: #dcdcdc;
+}
+
+.home .message {
+	font-weight: bold;
+	font-size: 20px;
+	color: #c0c0c0;
+}
+
+.home .post_origin {
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: bold;
+	color: #41b3a3;
+	text-align: left;
+	text-decoration: underline;
+	align-self: flex-start;
+}
+
+.home .title {
+	color: #a9a9a9;
+}
+
+.home .group_image {
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin: 5px;
+	width: 60px;
+	height: 60px;
+}
+
+.home .comment_image {
+	object-fit: cover;
+	margin: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+.home .comment_user {
+	padding-right: 5px;
+	color: #e27d60;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.home .button {
+	margin: none;
+	border-radius: 0px 5px 5px 0px;
+	border: 2px solid #41b3a3;
+	background-color: #41b3a3;
+	color: white;
+	padding: 3px;
+}
+
+.home .button:hover {
+	opacity: .7;
+}
+
+.home .comment {
+	margin: none;
+	outline: none;
+	border-radius: 5px 0px 0px 5px;
+	border: 2px solid #41b3a3;
+	background-color: white;
+	padding: 3px;
+}
+
+.home .show {
+	cursor: pointer;
+}
+
+/*---------------Profile Content--------------*/
+
+.main .profile {
+	/* offset x, offset y, blur radius, spread radius, color*/
+	padding: 2em 10em 2em 10em;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.profile .box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile .username {
+	font-size: 35px;
+	font-weight: bold;
+	color: #41b3a3;
+	padding-bottom: .5em;
+	padding-top: .5em;
+}
+
+.profile .profileimage {
+	align-self: center;
+	padding: 1em;
+	margin-top: 1em;
+	max-width: 7vw;
+	max-height: 7vw;
+	border: solid black;
+	box-shadow: 2px 2px 1px 1px #a9a9a9;
+	background-color: white;
+}
+
+.profile .button {
+	align-self: center;
+	text-align: center;
+	border: 2px solid black;
+	margin-top: .5em;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 18px;
+	background-color: #7cc3b5;
+	color: black;
+	width: 210px;
+	padding: 4px 40px;
+	border-radius: 5px;
+}
+
+.profile .button:hover{
+	opacity: 0.7;
+	transform: scale(0.98);
+}
+
+.profile tr:nth-child(odd) {
+	border-bottom: 1px #dddddd;
+	background-color: #dcdcdc;
+}
+
+.profile tr:nth-child(even) {
+	border-bottom: 1px #c0c0c0;
+	background-color: #f1f1f1;
+}
+
+.profile table {
+	font-size: 20px;
+	width: 70%;
+	border: 2px solid black;
+}
+
+.profile a {
+	color: black;
+}
+
+#tabletitle {
+	padding-top: 5%;
+	text-align: center;
+	font-weight: bold;
+}
+
+#tableheader {
+	background-color: #7cc3b5;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+/*---------------Profile Avatar Content--------------*/
+
+.main .avatar {
+	padding: 2em 10em 2em 10em;
+	/* offset x, offset y, blur radius, spread radius, color*/
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.avatar .title {
+	grid-column: 1 / -1;
+
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 35px;
+	font-weight: bold;
+	color: #41b3a3;
+}
+
+.avatar .profileimg {
+	cursor: pointer;
+
+	object-fit: cover;
+	padding: 1em;
+	max-width: 5vw;
+	max-height: 5vw;
+	border: solid black;
+	box-shadow: 2px 2px 1px 1px #a9a9a9;
+	background-color: white;
+}
+
+.avatar .groupimg {
+	object-fit: cover;
+	width: 7vw;
+	height: 7vw;
+	border: solid black;
+	box-shadow: 2px 2px 1px 1px #a9a9a9;
+}
+
+.avatar img:hover{
+	opacity: 0.7;
+	transform: scale(0.98);
+}
+
+/*---------------Groups Content--------------*/
+
+.main .groups {
+	padding: 2em 1em 2em 1em;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.groups .searchbar {
+	grid-column: 1 / -1;
+	grid-row: 1 / 2;
+
+	display: flex;
+	justify-content: center;
+	height: 1.5em;
+}
+
+.searchbar .searchfield {
+	width: 71%;
+	border: 2px solid black;
+	border-right: none;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	padding: 13.5px 0px 13.5px 15px;
+}
+
+.searchbar .search {
+	padding: 7px 15px 20px 15px;
+	border: 2px solid black;
+	border-radius: 0 5px 5px 0;
+	color: white;
+	background-color: #e27d60;
+	text-align: center;
+}
+
+.searchbar .search:hover {
+	opacity: .7;
+}
+
+.groups .right {
+	grid-column: 2 / 3;
+	grid-row: 2 / -1;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 5em;
+}
+
+.groups .left {
+	grid-column: 1 / 2;
+	grid-row: 2 / -1;
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding-top: 5em;
+}
+
+.groups .subheading {
+	padding: 15px;
+	width: 250px;
+	border: 2px solid black;
+	border-top: none;
+	margin-bottom: 2em;
+	background-color: white;
+}
+
+.groups img {
+	width: 280px;
+	height: auto;
+	margin: 2em;
+	margin-top: 2em;
+	margin-bottom: 0;
+	border: 2px solid black;
+	border-bottom: none;
+}
+
+.groups .small {
+	height: 174px;
+}
+
+.groups .button {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #e27d60;
+	color: white;
+	width: 284px;
+	padding: 5px 34px;
+}
+
+.groups .button:hover{
+	opacity: 0.7;
+}
+
+/*---------------Groups Create Content--------------*/
+
+.main .create {
+	padding: 2em 7em 2em 7em;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.create .form_div {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.create .group_image {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.create p {
+	padding-bottom: 1em;
+}
+
+.create .title {
+	font-size: 35px;
+	font-weight: bold;
+	color: #41b3a3;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+#right {
+	padding-bottom: 1.5em;
+}
+
+.create .button {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #7cc3b5;
+	color: black;
+	width: 260px;
+	padding: 4px 25px;
+	margin-top: 1em;
+	border-radius: 5px;
+}
+
+.create .button:hover{
+	opacity: 0.7;
+	transform: scale(0.98);
+}
+
+.create .field {
+	padding-top: .4em;
+	padding-bottom: .4em;
+	padding-left: .6em;
+	width: 260px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.create .group1 {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	margin-bottom: 3em;
+}
+
+.create .credentials {
+	margin-left: 1em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.group_image img {
+	object-fit: cover;
+	width: 17vh;
+	height: 17vh;
+	border: solid black;
+	box-shadow: 2px 2px 1px 1px #a9a9a9;
+}
+
+.group_image .subtext {
+	margin-top: .3em;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+}
+
+.group_image .name_group {
+	font-weight: bold;
+	font-size: 18px;
+	color: #e27d60;
+	text-decoration: underline;
+	text-align: left;
+}
+
+/*---------------Groups Join Content--------------*/
+
+.main .join {
+	padding: 2em 10em 2em 10em;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.join p {
+	padding: 1em;
+}
+
+.join table {
+	width: 100%;
+	border: 2px solid black;
+	font-size: 18px;
+}
+
+.join img {
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+}
+
+.join td {
+	padding-right: 10px;
+}
+
+.join a {
+	color: black;
+}
+
+.join .headers {
+	background-color: #e27d60;
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+.join .fa {
+	padding-left: .5em;
+}
+
+.join .body {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+
+/*---------------Groups Profile Content--------------*/
+
+.main .group_name {
+	font-family: "Courier New", Courier, monospace;
+	padding: 2em 2em 4em 2em;
+}
+
+.group_name .group_info {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: left;
+}
+
+.group_name .chat {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+	text-align: center;
+}
+
+.group_name .divider {
+	grid-column: 1 / -1;
+	grid-row: 2 / 3;
+
+	margin-top: 3em;
+	border-bottom: 1px solid grey;
+	text-align: center;
+}
+
+.group_name .pokemon {
+	grid-column: 1 / -1;
+	grid-row: 3 / -1;
+	text-align: center;
+}
+
+.group_name .group_posts {
+	grid-column: 1 / -1;
+	grid-row: 3 / -1;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.group_name .chatroom {
+	overflow: auto;
+	width: 100%;
+	height: 25em;
+	border: 2px solid #41b3a3;
+	border-bottom: none;
+	border-radius: 5px 5px 0px 0px;
+	background-color: white;
+	padding-left: 5px;
+
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.group_name .input_box {
+	width: 100%;
+	border: 2px solid #41b3a3;
+	border-radius: 0px 0px 5px 5px;
+	background-color: #dcdcdc;
+	padding: 10px 2.5px 10px 2.5px;
+	text-align: center;
+}
+
+.group_name .message_holder {
+	background-color: white;
+}
+
+.group_name .message {
+	width: 95%;
+	padding: 5px;
+	background-color: white;
+	border: 2px solid #e27d60;
+	border-radius: 10px;
+	outline: none;
+}
+
+.group_name .post_holder {
+	width: 70%;
+	height: 25em;
+	overflow: auto;
+	border: 2px solid #41b3a3;
+	border-radius: 5px;
+	background-color: white;
+}
+
+.group_name .profileimage {
+	object-fit: cover;
+	width: 8vw;
+	height: 8vw;
+	border: solid black;
+	box-shadow: 2px 2px 1px 1px #a9a9a9;
+}
+
+.group_name .group_image {
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid black;
+	margin: 5px;
+	width: 60px;
+	height: 60px;
+}
+
+
+.group_info p {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 20px;
+	color: black;
+	font-weight: bold;
+	padding: .7em;
+	padding-left: 0;
+}
+
+.leave {
+	cursor: pointer;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 18px;
+	text-align: left;
+}
+
+.group_name .title {
+	font-size: 30px;
+	font-weight: bold;
+	color: #41b3a3;
+}
+
+#group_title {
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.group_name .link {
+	font-size: 16px;
+}
+
+.group_name .field {
+	font-family: "Courier New", Courier, monospace;
+	text-align: center;
+	border: 2px solid #41b3a3;
+	border-radius: 5px;
+	font-size: 16px;
+	padding: .5em 1em .5em 1em;
+}
+
+.group_name .textfield {
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+	border: 2px solid #41b3a3;
+	border-radius: 5px;
+	font-size: 16px;
+	padding: .65em;
+	padding-bottom: 2em;
+}
+
+.group_name .button {
+	text-align: center;
+	border: 2px solid #41b3a3;
+	color: white;
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #41b3a3;
+	padding: 5px 20px;
+	width: 236px;
+	border-radius: 5px;
+}
+
+.group_name .button:hover {
+	opacity: .7;
+}
+
+#span {
+	font-size: 14px;
+	color: black;
+	padding-left: .5em;
+}
+
+.group_name .selected {
+	margin: none;
+	border: none;
+	outline: none;
+	padding: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 3px;
+	color: #41b3a3;
+	font-size: 20px;
+}
+
+.group_name .unselected {
+	margin: none;
+	border: none;
+	outline: none;
+	padding: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 3px;
+	color: white;
+	background-color: #41b3a3;
+	font-size: 20px;
+}
+
+.group_name .buttons {
+	display: inline-block;
+	display: flex; 
+}
+
+.group_name .button1 {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #7cc3b5;
+	color: black;
+	padding: 5px 20px;
+	border-radius: 5px;
+}
+
+.group_name .button2 {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #7cc3b5;
+	color: black;
+	width: 180px;
+	margin: 2em;
+	padding: 5px 5px;
+	border-radius: 5px;
+}
+
+.group_name button:hover{
+	opacity: 0.7;
+}
+
+.group_name .middle_border {
+	border-right: 1px solid grey;
+}
+
+.group_name .small {
+	padding: 1em;
+	margin-left: 5px;
+	background-color: #f2f2f2;
+	border: none;
+}
+
+.hovertext .text {
+	background-color: white;
+	padding: 5px 2px;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: 12px;
+}
+
+.group_name .remove {
+	cursor: pointer;
+	color: #41b3a3;
+	font-weight: bold;
+	font-size: 13px;
+	text-align: right;
+}
+
+.group_name .remove:hover {
+	opacity: .7;
+}
+
+.group_name .box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 7em;
+}
+
+.group_name .hbox {
+	display: flex;
+	align-content: center;
+	text-align: center;
+}
+
+.group_name .row {
+	display: flex;
+	flex-direction: row;
+}
+
+.group_name .vbox {
+	margin-top: 7em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.group_name #border {
+	border-bottom: 1px solid grey;
+}
+
+.group_name .chat_lock {
+	padding-top: 3em;
+	padding-left: 1em;
+	font-size: 20px;
+	color: #c0c0c0;
+	font-weight: bold;
+	text-align: center;
+}
+
+.group_name .user_title {
+	margin: 1em;
+	margin-top: 3em;
+	font-size: 20px;
+	text-decoration: underline;
+	font-weight: bold;
+	color: #41b3a3;
+}
+
+.group_name .personal_title {
+	margin: 1em;
+	margin-bottom: none;
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #e27d60;
+}
+
+.group_name .error {
+	margin-bottom: 3em;
+}
+
+.group_name .hint {
+	font-size: 14px;
+	color: #c0c0c0;
+}
+
+.group_name .hint:hover {
+	color: black;
+}
+
+.group_name .button3 {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #e27d60;
+	color: white;
+	width: 184px;
+	padding: 5px 10px;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.group_name .footer {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #41b3a3;
+	color: white;
+	width: 170px;
+	padding: 5px;
+	border-radius: 0px 0px 5px 5px;
+}	
+
+.group_name .party {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.group_name .pokemongroup {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	margin-bottom: .5em;
+}
+
+.group_name .searchbar {
+	margin-bottom: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.group_name .searchfield {
+	width: 25%;
+	border: 2px solid black;
+	border-right: none;
+	border-radius: 5px 0 0 5px;
+	outline: none;
+	padding: 5px 0px 5px 15px;
+	height: 30px;
+}
+
+.group_name .search {
+	padding: 7px 15px 6px 15px;
+	border: 2px solid black;
+	border-radius: 0 5px 5px 0;
+	color: white;
+	background-color: #e27d60;
+	text-align: center;
+	height: 30px;
+}
+
+.group_name .search:hover {
+	opacity: .7;
+}
+
+.group_name .none {
+	font-weight: bold;
+	font-size: 20px;
+	color: #c0c0c0;
+}
+
+.group_name .comment_image {
+	object-fit: cover;
+	margin: 5px;
+	width: 30px;
+	height: 30px;
+}
+
+.group_name .comment_user {
+	padding-right: 5px;
+	color: #e27d60;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.group_name .comment_holder {
+	display: none;
+	overflow: auto;
+	height: 14em;
+}
+
+/*---------------Info Content--------------*/
+
+.main .info {
+	font-family: "Courier New", Courier, monospace;
+	padding: 2em;
+	text-align: center;
+}
+
+.nested_info .pokeleagues {
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+.nested_info .me {
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+}
+
+.nested_info .flask_image {
+	grid-column: 2 / 3;
+	grid-row: 1 / 2;
+}
+
+.nested_info .flask {
+	margin-top: 5em;
+
+	max-width: 419px;
+	max-height: 164px;
+}
+
+.nested_info .pitt_image {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+}
+
+.nested_info .pitt {
+	margin-top: 5em;
+
+	max-width: 300px;
+	max-height: 169px;
+}
+
+.info .title {
+	font-size: 35px;
+	font-weight: bold;
+	color: #41b3a3;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.info .text {
+	font-size: 16px;
+	padding-bottom: 1em;
+}
+
+/*---------------User Report Content--------------*/
+
+.main .report {
+	padding: 2em 10em 2em 10em;
+	text-align: center;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.report .title {
+	font-size: 35px;
+	font-weight: bold;
+	color: #41b3a3;
+	padding-bottom: 1em;
+	padding-top: 1em;
+}
+
+.report .button {
+	text-align: center;
+	border: 2px solid black;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	background-color: #7cc3b5;
+	color: black;
+	width: 270px;
+	padding: 4px 30px;
+	border-radius: 5px;
+}
+
+.report .button:hover{
+	opacity: 0.7;
+	transform: scale(0.98);
+}
+
+.report .field {
+	padding-top: .2em;
+	padding-bottom: .2em;
+	padding-left: .6em;
+	margin-bottom: 2em;
+	width: 260px;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	border: 2px solid #41b3a3;
+	border-radius: 5px;
+}
+
+.report .textfield {
+	min-height: 8em;
+	min-width: 25em;
+	max-height: 30em;
+	max-width: 50em;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 16px;
+	padding: 1em;
+	border: 2px solid #41b3a3;
+	border-radius: 5px;
+	margin-bottom: 2em;
+}

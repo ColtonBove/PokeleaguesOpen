@@ -1,0 +1,34 @@
+{% extends "base_home.html" %}
+
+{% block title %}Groups{% endblock %}
+
+{% block tab %}
+	<p>Groups</p>
+{% endblock %}
+
+{% block content %}
+	<div class="groups">
+		<div class="nested_create">
+			<form class="searchbar" method="post" action="{{ url_for('join_search') }}">
+				<input class="searchfield" type="text" placeholder="Find a group by name..." name="search">
+				<button class="search" type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</form>
+			<div class="left">
+				<img class="small" src="https://images7.alphacoders.com/995/thumb-350-995781.jpg" alt="Create">
+				<button class="button" onclick="window.location.href='{{ url_for('create') }}'">Create a Group</button>
+				<p class="subheading">Creating a group gives you the chance to start fresh, set your own rules, and become group leader.
+				 You can invite friends, or make your group public which will allow other members to join in.
+				</p>
+			</div>
+			<div class="right">
+				<img src="https://images.alphacoders.com/103/thumb-350-1039414.png" alt="Join">
+				<button class="button" onclick="window.location.href='{{ url_for('join') }}'">Find a Group</button>
+				<p class="subheading">Find your friend's groups or other public groups still looking for members. Have all
+					the fun of being in a group, with none of the organization that comes with being a group leader.
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

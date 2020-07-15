@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+        <img class="starters" src="/static/starters.jpg" alt="kanto starters">
+        <div class="form" style="margin-top: 2em; margin-bottom: 2em;">
+        	<form action="" method="post" novalidate>
+            	<p style="font-weight: bold;">Sign In</p>
+                {{ form.hidden_tag() }}
+                <p>
+                    {{ form.username(class="field") }}
+                    {% for error in form.username.errors %}
+                        <br>
+                	   <span class="error">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.password(class="field") }}
+                    {% for error in form.password.errors %}
+                    	<br>
+                    	<span class="error">[{{ error }}]</span>
+                    {% endfor %}
+
+                    {% for message in get_flashed_messages() %}
+                    	<br>
+                		<span class="error">[{{ message }}]</span>
+            		{% endfor %}
+                </p>
+                <p>{{ form.remember_me() }}{{ form.remember_me.label(class="remember") }}</p>
+                <p>{{ form.submit(class="button") }}</p>
+        	</form>
+        	<p class="registertext">Looking to join or start your own league or tournament?</p>
+        	<button class="button" onclick="window.location.href='{{ url_for('register') }}'">Register Here</button>
+        </div>
+{% endblock %}

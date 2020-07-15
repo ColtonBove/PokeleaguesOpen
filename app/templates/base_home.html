@@ -1,0 +1,61 @@
+
+<title>{% block title %}Home{% endblock %} | PokeLeagues</title>
+
+<head>
+	<link rel="icon" href="/static/favicon.ico">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="container_home">
+	<div class="header">
+		<a class="links" href="{{ url_for('home') }}">
+		<p class="title">PokeLeagues</p>
+		</a>
+		<a class="links" href="https://github.com/ColtonBove/Pokeleagues.git">
+		<img class="media" src="/static/github.png" alt="github">
+		</a>
+		<a class="links" href="https://www.facebook.com/profile.php?id=100008506361966">
+		<img class="media" src="/static/facebook.png" alt="facebook">
+		</a>
+		<a class="links" href="https://www.instagram.com/colton8027/?hl=en">
+		<img class="media" src="/static/instagram.png" alt="instagram">
+		</a>
+		<p class="subtitle">"The online platform for pokemon draft leagues, tournaments, and more"</p>
+		<p class="subtitle">New? Get the vitual tour <a href="https://youtu.be/EhFcdGVB1b0" style="color: black">here</a> to learn more!</p>
+	</div>
+
+	<div class="sidebar">
+		<ul class="elements">
+		<li>
+	    <a href="{{ url_for('home') }}">Home | <i class="fa fa-home"></i></a></li>
+	    <li>
+	    <a href="{{ url_for('profile') }}">Profile | <i class="fa fa-user"></i></a></li>
+	    <li>
+	    <a href="{{ url_for('groups') }}">Groups | <i class="fa fa-group"></i></a></li>
+	    <li>
+	    <a href="{{ url_for('info') }}">Info | <i class="fa fa-info"></i></a></li>
+	    <li>
+	    <a href="{{ url_for('report') }}">Report | <i class="fa fa-folder"></i></a></li>
+	    <li>
+	    <a href="{{ url_for('logout') }}">[Logout]</a></li>
+		</ul>
+	</div>
+
+	<div class="toptab">
+		<div class="tab">
+			{% block tab %}{% endblock %}
+		</div>
+		<div class="main">
+			{% block content %}{% endblock %}
+		</div>
+		<div class="footer">
+			{% block footer %}{% endblock %}
+		</div>
+	</div>
+</div>
+
+
+
+
